@@ -1,0 +1,7 @@
+// 4 Ghante Baad Vishal Bhai Ka Pehla Commit 💚
+#include <stdio.h>
+int main() {
+    printf("Mama main jeet gaya\n");
+    printf("Green aa ja bhai please 💚\n");
+    return 0;
+}
