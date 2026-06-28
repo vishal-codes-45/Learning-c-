@@ -1,0 +1,8 @@
+
+#include <stdio.h>
+int main () {
+printf("Hello , GitHub \n");
+printf("i am vishal\n");
+printf("This is my first c program.\n");
+return 0;
+}
