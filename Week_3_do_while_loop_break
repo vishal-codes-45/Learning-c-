@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    do
+    {
+        printf("Enter a number (0 to exit): ");
+        scanf("%d", &num);
+
+        if(num == 0)
+        {
+            break;
+        }
+
+        printf("You entered: %d\n\n", num);
+
+    } while(1);
+
+    printf("Program End");
+
+    return 0;
+}
