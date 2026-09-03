@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 5
+
+struct Account {
+    char website[30];
+    char username[30];
+    char password[30];
+};
+
+int main() {
+    struct Account acc[MAX];
+    int count = 0;
+    int choice;
+
+    while (1) {
+        printf("\n===== MINI PASSWORD MANAGER =====\n");
+        printf("1. Add Account\n");
+        printf("2. Show Accounts\n");
+        printf("3. Search Website\n");
+        printf("4. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            if (count >= MAX) {
+                printf("Storage Full!\n");
+                continue;
+            }
+
+            printf("Website: ");
+            scanf("%29s", acc[count].website);
+
+            printf("Username: ");
+            scanf("%29s", acc[count].username);
+
+            printf("Password: ");
+            scanf("%29s", acc[count].password);
+
+            count++;
+            printf("Account Added Successfully!\n");
+        }
+
+        else if (choice == 2) {
+            if (count == 0) {
+                printf("No accounts saved.\n");
+            } else {
+                for (int i = 0; i < count; i++) {
+                    printf("\nAccount %d\n", i + 1);
+                    printf("Website : %s\n", acc[i].website);
+                    printf("Username: %s\n", acc[i].username);
+                    printf("Password: %s\n", acc[i].password);
+                }
+            }
+        }
+
+        else if (choice == 3) {
+            char search[30];
+            int found = 0;
+
+            printf("Enter website to search: ");
+            scanf("%29s", search);
+
+            for (int i = 0; i < count; i++) {
+                if (strcmp(acc[i].website, search) == 0) {
+                    printf("\nFound!\n");
+                    printf("Username: %s\n", acc[i].username);
+                    printf("Password: %s\n", acc[i].password);
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (!found)
+                printf("Website not found.\n");
+        }
+
+        else if (choice == 4) {
+            printf("Goodbye!\n");
+            break;
+        }
+
+        else {
+            printf("Invalid Choice!\n");
+        }
+    }
+
+    return 0;
+}
