@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, choice;
+    float amount, total = 0;
+    char *category;
+
+    printf("===== MINI EXPENSE TRACKER =====\n");
+
+    printf("Kitne expenses add karne hain? ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        printf("\nExpense %d ka amount: ", i);
+        scanf("%f", &amount);
+pense
+        printf("Category choose karo:\n");
+        printf("1. Food\n");
+        printf("2. Travel\n");
+        printf("3. Study\n");
+        printf("4. Other\n");
+        printf("Choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                category = "Food";
+                break;
+            case 2:
+                category = "Travel";
+                break;
+            case 3:
+                category = "Study";
+                break;
+            case 4:
+                category = "Other";
+                break;
+            default:
+                category = "Unknown";
+        }
+
+        total += amount;
+
+        printf("Added: Rs. %.2f [%s]\n", amount, category);
+    }
+
+    printf("\n-----------------------------\n");
+    printf("Total Expense = Rs. %.2f\n", total);
+    printf("Average Expense = Rs. %.2f\n", total / n);
+    printf("-----------------------------\n");
+
+    return 0;
+}
