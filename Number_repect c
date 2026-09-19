@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n, temp, digit, even = 0, odd = 0, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    temp = n;
+
+    while (temp != 0) {
+        digit = temp % 10;
+        sum += digit;
+
+        if (digit % 2 == 0)
+            even++;
+        else
+            odd++;
+
+        temp /= 10;
+    }
+
+    printf("\n--- Number Report ---\n");
+    printf("Digit Sum   : %d\n", sum);
+    printf("Even Digits : %d\n", even);
+    printf("Odd Digits  : %d\n", odd);
+
+    if (sum % 2 == 0)
+        printf("Sum Status  : Even\n");
+    else
+        printf("Sum Status  : Odd\n");
+
+    return 0;
+}
