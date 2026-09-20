@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t current;
+    struct tm *local;
+
+    printf("===== DIGITAL CLOCK =====\n");
+
+    while (1) {
+        current = time(NULL);
+        local = localtime(&current);
+
+        printf("\rTime: %02d:%02d:%02d",
+               local->tm_hour,
+               local->tm_min,
+               local->tm_sec);
+
+        fflush(stdout);
+    }
+
+    return 0;
+}
